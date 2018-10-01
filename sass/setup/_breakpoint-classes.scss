@@ -1,0 +1,23 @@
+//--------------------------------------------------------------
+// Responsive Setup
+// Utility Classes
+//--------------------------------------------------------------
+
+
+// Responsive Alternates
+
+.responsive-wide,
+img.responsive-wide {
+	display: none;
+	@include respondTo(atleast-medium) {
+		display: block;
+	}
+}
+
+.responsive-narrow,
+img.responsive-narrow {
+	display: block;
+	@include respondTo(atleast-medium) {
+		display: none;
+	}
+}

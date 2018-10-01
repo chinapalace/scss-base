@@ -1,0 +1,49 @@
+/*--------------------------------------------------------------
+# Typography
+## Headings
+--------------------------------------------------------------*/
+h1, h2, h3, h4, h5, h6 {
+  font-family: $type--fontfamily;
+  font-weight: normal;
+  color: $color--text-main;
+  line-height: 1;
+  margin: 0 0 $size__global-smallspace;
+	clear: both;
+}
+
+h1 {
+  @include headings(heading1);
+  font-weight: normal;
+  &.entry-title {
+    font-weight: bold;
+    color: $color__text-headings--alt;
+  }
+}
+h1.intro-heading {
+  font-size: 3.8rem; //76px
+}
+
+h2 {
+  @include headings(heading2);
+  color: $color__text-headings--alt;
+}
+
+h3 {
+  @include microtype(1);
+  font-weight: bold;
+}
+
+h4 {
+  font-size: 1rem;
+  letter-spacing: 0.05rem;
+  text-transform: uppercase;
+  font-weight: normal;
+}
+
+h5 {
+  @include microtype(2);
+}
+
+h6 {
+  @include microtype(3);
+}

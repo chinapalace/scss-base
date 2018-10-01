@@ -1,0 +1,419 @@
+//--------------------------------------------------------------
+// Breakpoints Setup
+// Mixins
+//--------------------------------------------------------------
+
+@mixin respondTo($media) {
+  // Horizontal Queries
+
+  @if $media == upto-tight {
+    @media only screen and (max-width: $size--width-tight) {
+      @content;
+    }
+  } // @include respondTo(upto-tight)
+
+  @if $media == atleast-tight {
+    @media only screen and (min-width: $size--width-tight) {
+      @content;
+    }
+  } // @include respondTo(atleast-tight)
+
+  @if $media == tight-narrow {
+    @media only screen and (min-width: $size--width-tight) and (max-width: $size--width-narrow) {
+      @content;
+    }
+  } // @include respondTo(tight-narrow)
+
+  @if $media == upto-narrow {
+    @media only screen and (max-width: $size--width-narrow) {
+      @content;
+    }
+  } // @include respondTo(upto-narrow)
+
+  @if $media == atleast-narrow {
+    @media only screen and (min-width: $size--width-narrow) {
+      @content;
+    }
+  } // @include respondTo(atleast-narrow)
+
+  @if $media == narrow-medium {
+    @media only screen and (min-width: $size--width-narrow) and (max-width: $size--width-medium) {
+      @content;
+    }
+  } // @include respondTo(narrow-medium)
+
+  @if $media == upto-medium {
+    @media only screen and (max-width: $size--width-medium) {
+      @content;
+    }
+  } // @include respondTo(upto-medium)
+
+  @if $media == atleast-medium {
+    @media only screen and (min-width: $size--width-medium) {
+      @content;
+    }
+  } // @include respondTo(atleast-medium)
+
+  @if $media == medium-wide {
+    @media only screen and (min-width: $size--width-medium) and (max-width: $size--width-wide) {
+      @content;
+    }
+  } // @include respondTo(medium-wide)
+
+  @if $media == upto-wide {
+    @media only screen and (max-width: $size--width-wide) {
+      @content;
+    }
+  } // @include respondTo(upto-wide)
+
+  @if $media == atleast-wide {
+    @media only screen and (min-width: $size--width-wide) {
+      @content;
+    }
+  } // @include respondTo(atleast-wide)
+
+  @if $media == wide-wider {
+    @media only screen and (min-width: $size--width-wide) and (max-width: $size--width-wider) {
+      @content;
+    }
+  } // @include respondTo(wide-wider)
+
+  @if $media == upto-wider {
+    @media only screen and (max-width: $size--width-wider) {
+      @content;
+    }
+  } // @include respondTo(upto-wider)
+
+  @if $media == atleast-wider {
+    @media only screen and (min-width: $size--width-wider) {
+      @content;
+    }
+  } // @include respondTo(atleast-wider)
+
+  @if $media == atleast-extra-wide {
+    @media only screen and (min-width: $size--width-extra-wide) {
+      @content;
+    }
+  } // @include respondTo(atleast-extra-wide)
+
+  @if $media == atleast-ultra-wide {
+    @media only screen and (min-width: $size--width-ultra-wide) {
+      @content;
+    }
+  } // @include respondTo(atleast-ultra-wide)
+
+  // Vertical Queries
+
+  @if $media == atleast-short {
+    @media only screen and (min-height: $size--height-short) {
+      @content;
+    }
+  }
+
+  @if $media == atleast-medium-height {
+    @media only screen and (min-height: $size--height-medium) {
+      @content;
+    }
+  }
+
+  @if $media == atleast-tall {
+    @media only screen and (min-height: $size--height-tall) {
+      @content;
+    }
+  }
+
+  // Landscape Mobile Device Queries
+
+  @if $media == mob-landscape-one {
+    @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 1) and (orientation: landscape) {
+      @content;
+    }
+  } // @include respondTo(mob-landscape-one)
+
+  @if $media == mob-landscape-two {
+    @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+      @content;
+    }
+  } // @include respondTo(mob-landscape-two)
+
+  @if $media == mob-landscape-three {
+    @media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: landscape) {
+      @content;
+    }
+  } // @include respondTo(mob-landscape-three)
+} // @mixin respondTo($media)
+
+//--------------------------------------------------------------
+// Typography Setup
+// Mixins
+//--------------------------------------------------------------
+
+@mixin type-body($type-body: regular) {
+  @if $type-body == regular {
+    font-size: $type--fontsize-base;
+  } // @include type-body();
+
+  @if $type-body == intro {
+    font-size: $type--fontsize-medium;
+    line-height: $type--lineheight-condensed;
+  } // @include type-body(intro);
+
+  @if $type-body == note {
+    font-size: $type--fontsize-small;
+  } // @include type-body(note);
+
+  @if $type-body == note-small {
+    font-size: $type--fontsize-xsmall;
+  } // @include type-body(note-small);
+} //@include type-body();
+
+@mixin type-blockquote($type-blockquote: medium, $type-heading-weight: normal) {
+  @if $type-blockquote == large {
+    font-size: $type--fontsize-xlarge;
+    line-height: $type--lineheight-tight;
+    letter-spacing: $type--letterspacing-tight;
+  }
+
+  @if $type-blockquote == medium {
+    font-size: $type--fontsize-large;
+    line-height: $type--lineheight-condensed;
+  }
+
+  @if $type-blockquote == base {
+    font-size: $type--fontsize-medium;
+    line-height: $type--lineheight-condensed;
+    letter-spacing: $type--letterspacing-reset;
+  } // @include type-blockquote(base);
+
+  @if $type-blockquote == small {
+    font-size: $type--fontsize-base;
+    line-height: $type--lineheight-regular;
+    letter-spacing: $type--letterspacing-medium;
+  }
+
+  @if $type-blockquote == tiny {
+    font-size: $type--fontsize-small;
+    line-height: $type--lineheight-regular;
+    letter-spacing: $type--letterspacing-medium;
+  }
+
+  // Global stuff applied to all variations:
+  font-weight: $type-heading-weight;
+  font-style: italic;
+} // @include type-blockquote();
+
+@mixin type-heading($type-heading, $type-heading-weight: bold) {
+  @if $type-heading == huge {
+    font-size: $type--fontsize-huge;
+    letter-spacing: $type--letterspacing-tight;
+    line-height: $type--lineheight-reset;
+  } // @include type-heading(huge);
+
+  @if $type-heading == xxlarge {
+    font-size: $type--fontsize-xxlarge;
+    letter-spacing: $type--letterspacing-tight;
+    line-height: $type--lineheight-tight;
+  }
+
+  @if $type-heading == xlarge {
+    font-size: $type--fontsize-xlarge;
+    line-height: $type--lineheight-tight;
+  }
+
+  @if $type-heading == large {
+    font-size: $type--fontsize-large;
+    line-height: $type--lineheight-condensed;
+  }
+
+  @if $type-heading == medium {
+    font-size: $type--fontsize-medium;
+    line-height: $type--lineheight-condensed;
+  }
+
+  @if $type-heading == microtype-large {
+    font-size: $type--fontsize-base;
+    line-height: $type--lineheight-reset;
+    letter-spacing: $type--letterspacing-wide;
+    text-transform: uppercase;
+  }
+
+  @if $type-heading == microtype {
+    font-size: $type--fontsize-small;
+    line-height: $type--lineheight-reset;
+    letter-spacing: $type--letterspacing-wide;
+    text-transform: uppercase;
+  } // @include type-heading(microtype);
+
+  @if $type-heading == microtype-small {
+    font-size: $type--fontsize-xsmall;
+    line-height: $type--lineheight-reset;
+    letter-spacing: $type--letterspacing-wider;
+    text-transform: uppercase;
+  } // @include type-heading(microtype-small);
+
+  @if $type-heading == microtype-xsmall {
+    font-size: $type--fontsize-tiny;
+    line-height: $type--lineheight-reset;
+    letter-spacing: $type--letterspacing-widest;
+    text-transform: uppercase;
+  } // @include type-heading(microtype-xsmall);
+
+  @if $type-heading == legend {
+    font-size: $type--fontsize-xsmall;
+    line-height: $type--lineheight-tight;
+    letter-spacing: $type--letterspacing-nudge;
+    text-transform: none;
+    font-style: italic;
+  } // @include type-heading(legend);
+
+  // Global stuff applied to all headings:
+  font-weight: $type-heading-weight;
+} //@include type-heading(large);
+
+//--------------------------------------------------------------
+// Elements Setup
+// Mixins
+//--------------------------------------------------------------
+
+// Buttons Mixin
+
+@mixin button(
+  $button-type: primary,
+  $button-size: large,
+  $button-context: normal
+) {
+  // Button Type
+
+  @if $button-type == primary {
+    background: $color__background-button;
+    color: $color__text-button;
+
+    &:hover {
+      color: $color__text-button-hover;
+      background: $color__background-button-hover;
+      top: -0.05rem;
+      box-shadow: 0 0.1rem 0 $color__link-button-boxshadow;
+    } // &:hover
+
+    &:active {
+      background: $color__background-button-active;
+    } // &:active
+  } // @include button(primary);
+
+  @if $button-type == secondary {
+    border: $size--border-soft solid $color--cloud-300;
+
+    &:hover {
+      border: $size--border-soft solid $color--cloud-500;
+      box-shadow: 0 $size--border-soft solid 0 $color--cloud-500;
+      color: $color--text-medium;
+    } // &:hover
+  } // @include button(secondary);
+
+  // Button Size
+
+  @if $button-size == large {
+    @include type-heading(microtype);
+    padding: 1em 1.5em;
+  } // @include button(primary, large);
+
+  @if $button-size == medium {
+    @include type-heading(microtype-small);
+    padding: 0.5em 1em;
+  } // @include button(primary, medium);
+
+  @if $button-size == small {
+    @include type-heading(microtype-xsmall);
+    padding: 0.5em 1em;
+    position: relative;
+    top: -0.25em;
+  } // @include button(primary, small);
+
+  // Button Context
+
+  @if $button-context == inverted {
+    @if $button-type == primary {
+      &:hover {
+        box-shadow: 0 0.1rem 0 $color--shadow-darker;
+      }
+    } // @include button(primary);
+
+    @if $button-type == secondary {
+      border: $size--border-soft solid $color--night-700;
+      color: $color--heading-inverted-main;
+      &:hover {
+        border: $size--border-soft solid $color--night-400;
+        color: $color--text-inverted-medium;
+      }
+    } // @include button(secondary);
+  } // @include button(secondary-large);
+
+  // Button Defaults
+
+  box-shadow: 0 0 0 transparent; // Reset box shadow from links
+  border-radius: $size--radius;
+} // @include button();
+
+//--------------------------------------------------------------
+// Metrics Setup
+// Mixins
+//--------------------------------------------------------------
+
+// Center block
+@mixin center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+} // @include center-block();
+
+// Clearfix
+@mixin clearfix() {
+  content: "";
+  display: table;
+  table-layout: fixed;
+}
+
+// Clear after (not all clearfix need this also)
+@mixin clearfix-after() {
+  clear: both;
+}
+
+// Rounded-edges line
+@mixin rounded-line(
+  $rounded-line-color: $color__border-divider,
+  $rounded-line-weight: $size--radius
+) {
+  content: " ";
+  display: block;
+  position: relative;
+  width: 100%;
+  height: $rounded-line-weight;
+  border-radius: $rounded-line-weight;
+  background: $rounded-line-color;
+} // @include rounded-line();
+
+// Size Mixin
+
+@mixin size($element-size) {
+  @if $element-size == bleed {
+    position: relative;
+    width: 102vw;
+    left: 50%;
+    transform: translateX(-50%);
+    @include respondTo(atleast-ultra-wide) {
+      max-width: $size--width-extra-wide;
+    }
+  } //@include size(bleed);
+
+  @if $element-size == site {
+    width: 100%;
+    max-width: $size--site-maxwidth;
+    @include center-block;
+    padding: 0 $size__global-smallspace;
+    transition: padding 0.25s ease-out;
+    @include respondTo(atleast-narrow) {
+      padding: 0 ($size__global-smallspace * 2);
+      transition: padding 0.25s ease-out;
+    }
+  } //@include size(site);
+} //@include size();
